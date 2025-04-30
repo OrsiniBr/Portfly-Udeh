@@ -1,29 +1,30 @@
 import { useRef } from "react";
 import "./portfolio.scss";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const items = [
   {
     id: 1,
     title: "Swap Dex App",
-    img: "../../public/dexThumb.png",
+    img: "/dexThumb.png",
     desc: "A dex app that swaps tokens with their respective live prices using the moralis api and 1inch Aggregator",
-    link: "https://swap-dex-q24w.vercel.app/",
+    href: "https://swap-dex-q24w.vercel.app/",
   },
   {
     id: 2,
     title: "Termina Defi",
-    img: "../../public/terminaThumb.png",
+    img: "/terminaThumb.png",
     desc: " Simple Defi with Gas Abstraction",
-    link: "https://termina.fun/",
+    href: "https://termina.fun/",
   },
   {
     id: 3,
     title: "Ecommerce Yonder",
-    img: "../../public/yondercommThumb.png",
+    img: "/yondercommThumb.png",
     desc: "A fulstack ecommerce app with a custom backend and stripe payment integration",
-    link: "https://yondercomm-sales.onrender.com/"
-  }
+    href: "https://yondercomm-sales.onrender.com/",
+  },
 ];
 
 const Single = ({ item }) => {
@@ -36,17 +37,19 @@ const Single = ({ item }) => {
   const y = useTransform(scrollYProgress, [0, 1], [-300, 300]);
 
   return (
-    <section >
+    <section>
       <div className="container">
         <div className="wrapper">
           <div className="imageContainer" ref={ref}>
             <img src={item.img} alt="" />
           </div>
-          <motion.div className="textContainer" style={{y}}>
-            <h2>{item.title}</h2>
-            <p>{item.desc}</p>
-            <button>See Demo</button>
-          </motion.div>
+          <Link to={item.href}>
+            <motion.div className="textContainer" style={{ y }}>
+              <h2>{item.title}</h2>
+              <p>{item.desc}</p>
+              <button>See Demo</button>
+            </motion.div>
+          </Link>
         </div>
       </div>
     </section>
