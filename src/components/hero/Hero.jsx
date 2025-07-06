@@ -49,7 +49,9 @@ const Hero = () => {
         >
           <motion.h2 variants={textVariants}>Udeh Udochukwu</motion.h2>
           <motion.h1 variants={textVariants}>
-            Web developer 
+            Frontend Developer
+            <br />
+            <span>Bringing protocol to the user interface</span>
           </motion.h1>
           <motion.div variants={textVariants} className="buttons">
             <motion.button variants={textVariants}>
