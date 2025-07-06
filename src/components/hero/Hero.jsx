@@ -73,9 +73,9 @@ const Hero = () => {
       >
         JS TS NODE.JS REACT.JS Nextjs Git Github
       </motion.div>
-      <div className="imageContainer">
+      {/* <div className="imageContainer">
         <img src="/Orsini.png" alt="" />
-      </div>
+      </div> */}
     </div>
   );
 };
